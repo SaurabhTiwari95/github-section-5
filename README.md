@@ -13,6 +13,6 @@
     have done in app.component.html file) is now able to bind to the element.
   ***
   ***
-  - *@Output* is used to communicate from child component to parent component.
-  - *@Input* is used to communicate from parent component to child component.
+  - **@Output** is used to communicate from child component to parent component.
+  - **@Input** is used to communicate from parent component to child component.
   ***
