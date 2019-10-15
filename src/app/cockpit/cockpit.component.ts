@@ -14,22 +14,27 @@ export class CockpitComponent implements OnInit {
     serverName: string;
     serverContent: string;
   }>();
-  newServerName = "";
+  //newServerName = "";
+  //We don't need the newServerName because we are using the local reference approach.
   newServerContent = "";
 
   constructor() {}
 
-  ngOnInit() {}
-  onAddServer() {
+  ngOnInit() {
+
+  }
+  onAddServer(serverNameInput : HTMLInputElement) {
+   // console.log(serverNameInput.value);
+   // by logging this we can analyze this,what it actually means
     this.serverCreated.emit({
-      serverName: this.newServerName,
+      serverName: serverNameInput.value,
       serverContent: this.newServerContent
     });
   }
 
-  onAddBlueprint() {
+  onAddBlueprint(serverNameInput : HTMLInputElement) {
     this.blueprintCreated .emit({
-      serverName: this.newServerName,
+      serverName: serverNameInput.value,
       serverContent: this.newServerContent
     });
   }
