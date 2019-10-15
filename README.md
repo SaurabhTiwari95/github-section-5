@@ -4,6 +4,9 @@
 
 ## How Components communicate with each other ??
   ***
+  - server-element.component.ts
+  ***
+  ***
   - By default All properties of components are accessible only inside these components and not from outside
     that is why we have to add a decorator to the property(Input),we have to explicit about which property 
     is bindable to other components.
@@ -17,6 +20,25 @@
   - **@Input** is used to communicate from parent component to child component.
   ***
 ## Understanding ViewEncapsulation( Lec-70 )
+  ***
+  - server-element.component.ts
+  ***
+```
+   syntax:
+    
+    encapsulation : value.Mode
+
+    There are three modes of this property , they are:  
+    1.Emulated(default behavior)
+    2.Native(Supported by the browsers who support shadow DOM otherwise use None)
+    3.None (overwrites the View Encapsulation styles)
+
+    This property will be imoprted from @angular/core.
+    
+    We can overwrite the view Encapsulation property on styles by adding the above property,so that this component
+    will not use the ViewEncapsulation of styles the other Components will still use it where we can see the strange 
+    attributes,but now when we define any styles in this component(in the css file of this component) they will get applied globally.   
+```
 ## What is LOCAL REFERENCE & how it can be passed in the TypeScript Code ??( Lec-71 )
   ***
   - cockpit.component.html
