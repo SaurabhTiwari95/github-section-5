@@ -55,4 +55,3 @@
 
     And we can see that in the console by inspecting the code.
 ```
-  
