@@ -32,8 +32,12 @@
     on the element.
 ```
 ```
-  A local reference can be placed on any HTML element so not only on the InputElement, on anything  we see
-  on the template {SYNTAX: [#nameofanychoice]}.
+  A local reference can be placed on any HTML element so not only on the InputElement, 
+  on anything  we see on the template.
+  
+  SYNTAX: 
+            #nameofanychoice
+  
   This reference will hold the reference to the element, 
   not only the value just entered there but to the whole HTML element
   with all it's properties,we can see this if we pass this local reference 
@@ -46,7 +50,9 @@
   */
 ```
 ```
-    Local reference gives us the element with all it's properties so we can also output the value of the properties.
+    Local reference gives us the element with all it's properties so we can 
+    also output the value of the properties.
+
     And we can see that in the console by inspecting the code.
 ```
   
