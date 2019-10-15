@@ -1,10 +1,28 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
   templateUrl: './server-element.component.html',
-  styleUrls: ['./server-element.component.css']
+  styleUrls: ['./server-element.component.css'],
+  encapsulation : ViewEncapsulation.Emulated
+  /*
+    syntax:
+    
+    [encapsulation : value.Mode]
+
+    This property will be imoprted from @angular/core.
+    
+    We can overwrite the view Encapsulation property on styles by adding the above property,so that this component
+    will not use the ViewEncapsulation of styles the other Components will still use it where we can see the strange 
+    attributes,but now when we define any styles in this component(in the css file of this component) they will get applied globally.
+    
+    There are three modes of this property , they are:  
+    1.Emulated(default behavior)
+    2.Native(Supported by the browsers who support shadow DOM otherwise use None)
+    3.None (overwrites the View Encapsulation styles)
+  */
 })
+
 export class ServerElementComponent implements OnInit {
   /* By default All properties of components are accessible only inside these components and not from outside
   that is why we have to add a decorator to the property(Input),we have to explicit about which property 
