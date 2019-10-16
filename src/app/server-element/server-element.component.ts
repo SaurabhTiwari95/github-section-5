@@ -6,7 +6,13 @@ import {
     OnChanges, 
     SimpleChanges,
     DoCheck,
-    AfterContentInit
+    AfterContentInit,
+    AfterContentChecked,
+    AfterViewInit,
+    AfterViewChecked,
+    OnDestroy,
+    ViewChild,
+    ElementRef
   
   } from '@angular/core';
 
@@ -33,7 +39,15 @@ import {
   */
 })
 
-export class ServerElementComponent implements OnInit,OnChanges,DoCheck,AfterContentInit {
+export class ServerElementComponent implements 
+  OnInit,
+  OnChanges,
+  DoCheck,
+  AfterContentInit,
+  AfterContentChecked,
+  AfterViewInit,
+  AfterViewChecked,
+  OnDestroy {
   /* By default All properties of components are accessible only inside these components and not from outside
   that is why we have to add a decorator to the property(Input),we have to explicit about which property 
   is bindable to other components.
@@ -44,6 +58,7 @@ export class ServerElementComponent implements OnInit,OnChanges,DoCheck,AfterCon
   have done in app.component.html file) is now able to bind to the element*/
  @Input('srvElement') element:{type: string, name: string, content: string};
  @Input() name: string; 
+ @ViewChild('heading',{static:true}) header: ElementRef;
   constructor() {
     console.log('constructor called');
    }
@@ -59,6 +74,7 @@ export class ServerElementComponent implements OnInit,OnChanges,DoCheck,AfterCon
 
   ngOnInit() {
     console.log('ngOnInit called');
+    console.log('TeXt Content'+this.header.nativeElement.textcontent);
   }
   ngDoCheck(){
     console.log('ngDoCheck called');
@@ -70,5 +86,16 @@ export class ServerElementComponent implements OnInit,OnChanges,DoCheck,AfterCon
     console.log('ngAfterContentInit called');
 
   }
-
+  ngAfterContentChecked(){
+    console.log('ngAfterContentChecked called')
+  }
+  ngAfterViewInit(){
+    console.log('ngAfterViewInit called');
+  }
+  ngAfterViewChecked(){
+    console.log('ngAfterViewChecked called');
+  }
+  ngOnDestroy(){
+    console.log('ngOnDestroy called');
+  }
 }
