@@ -93,7 +93,7 @@
 *** 
   - This is another way of passing data, which is used ,
   - When we have a complex HTML code like the above which we want to pass into a component from outside.
-  - The above tag is pasted in the app.component.html file to use the '<ng-content></ng-content>' directive.
+  - The above tag is pasted in the app.component.html file to use the ```<ng-content></ng-content>``` directive.
   - Everything which is placed between opening and cosing of our own component is lost by default, it is 
       simply removed from the DOM and angular will not take care about it but we can change this by the special
       directive call 'ng-content'.
@@ -101,7 +101,7 @@
   - we can add this directive in the template in the place where we want to render the content.
   - It serves as a hook we can place in our component to mark the place for angular,where it should 
       add any content it finds between opening and closing tag of the component(in this case it is 
-      '<app-server-element></app-server-element>' located in the app.component.html file).
+      ```<app-server-element></app-server-element>``` located in the app.component.html file).
   - Now the app will look exactly the way it looked before but now technically something totally different happened
       here.
   - Now we add this via the ng-content hook and we have added between opening and closing tags therefore
