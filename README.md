@@ -8,12 +8,12 @@
   ***
   ***
   - By default All properties of components are accessible only inside these components and not from outside
-    that is why we have to add a decorator to the property(Input),we have to explicit about which property 
-    is bindable to other components.
+      that is why we have to add a decorator to the property(Input),we have to explicit about which property 
+      is bindable to other components.
   - We add @Input to make a property bindable from outside.
   - With this decorator(@Input) we are sucessfully exposing this property,so now any
-    parent component or any component hosting our ServerElementComponent(like we
-    have done in app.component.html file) is now able to bind to the element.
+      parent component or any component hosting our ServerElementComponent(like we
+      have done in app.component.html file) is now able to bind to the element.
   ***
   ***
   - **@Output** is used to communicate from child component to parent component.
@@ -108,3 +108,14 @@
       it will be projected into our component(i.e. app-server-element component).
     
 ***
+### Lec-76 : Lifecycle
+***
+  - **ngOnchanges** : *Called after a bound input property changes.*
+  - **ngOnInIt** : *Called once the component is initialized.* 
+      - *runs after the constructor*
+  - **ngDoCheck** : *Called during every change detection run.*
+  - **ngAfterContentInit** : *Called after content(ng-content) has been projected into view.*
+  - **ngAfterContentChecked** : *Called every time the projected content has been checked.*
+  - **ngAfteViewInit** : *Called after the component's view(and child views) has been initialized.*
+  - **ngAfterViewChecked** : *Called every time the view(and child views) have been checked.*
+  - **ngOnDestroy** : *Called once the component is about to be destroyed.*
