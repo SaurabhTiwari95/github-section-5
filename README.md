@@ -112,7 +112,7 @@
 ***
   - **ngOnchanges** : *Called after a bound input property changes.*
   - **ngOnInIt** : *Called once the component is initialized.* 
-      - *runs after the constructor*
+      - **ngOnInit** *runs after the constructor*
   - **ngDoCheck** : *Called during every change detection run.*
   - **ngAfterContentInit** : *Called after content(ng-content) has been projected into view.*
   - **ngAfterContentChecked** : *Called every time the projected content has been checked.*
