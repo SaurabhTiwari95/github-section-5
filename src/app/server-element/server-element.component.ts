@@ -1,27 +1,26 @@
-import { 
-    Component, 
-    OnInit, 
-    Input, 
-    ViewEncapsulation, 
-    OnChanges, 
-    SimpleChanges,
-    DoCheck,
-    AfterContentInit,
-    AfterContentChecked,
-    AfterViewInit,
-    AfterViewChecked,
-    OnDestroy,
-    ViewChild,
-    ElementRef,
-    ContentChild
-  
-  } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  ViewEncapsulation,
+  OnChanges,
+  SimpleChanges,
+  DoCheck,
+  AfterContentInit,
+  AfterContentChecked,
+  AfterViewInit,
+  AfterViewChecked,
+  OnDestroy,
+  ViewChild,
+  ElementRef,
+  ContentChild
+} from "@angular/core";
 
 @Component({
-  selector: 'app-server-element',
-  templateUrl: './server-element.component.html',
-  styleUrls: ['./server-element.component.css'],
-  encapsulation : ViewEncapsulation.Emulated
+  selector: "app-server-element",
+  templateUrl: "./server-element.component.html",
+  styleUrls: ["./server-element.component.css"],
+  encapsulation: ViewEncapsulation.Emulated
   /*
     syntax:
     
@@ -39,16 +38,16 @@ import {
     3.None (overwrites the View Encapsulation styles)
   */
 })
-
-export class ServerElementComponent implements 
-  OnInit,
-  OnChanges,
-  DoCheck,
-  AfterContentInit,
-  AfterContentChecked,
-  AfterViewInit,
-  AfterViewChecked,
-  OnDestroy {
+export class ServerElementComponent
+  implements
+    OnInit,
+    OnChanges,
+    DoCheck,
+    AfterContentInit,
+    AfterContentChecked,
+    AfterViewInit,
+    AfterViewChecked,
+    OnDestroy {
   /* By default All properties of components are accessible only inside these components and not from outside
   that is why we have to add a decorator to the property(Input),we have to explicit about which property 
   is bindable to other components.
@@ -57,50 +56,51 @@ export class ServerElementComponent implements
   /* With this decorator(@Input) we are sucessfully exposing this property,so now any
   parent component or any component hosting our ServerElementComponent(like we
   have done in app.component.html file) is now able to bind to the element*/
- @Input('srvElement') element:{type: string, name: string, content: string};
- @Input() name: string; 
- @ViewChild('heading',{static:true}) header: ElementRef;
- @ContentChild('contentParagraph',{static:true}) paragraph: ElementRef;
+  @Input("srvElement") element: { type: string; name: string; content: string };
+  @Input() name: string;
+  @ViewChild("heading", { static: true }) header: ElementRef;
+  @ContentChild("contentParagraph", { static: true }) paragraph: ElementRef;
   constructor() {
-    console.log('constructor called');
-   }
-   ngOnChanges(changes: SimpleChanges){
-     /*
+    console.log("constructor called");
+  }
+  ngOnChanges(changes: SimpleChanges) {
+    /*
       This hook receives an argumnet & it's the only hook which does.
      */
-     console.log('ngOnChanges called');
-     console.log(changes);
-
-
-   }
+    console.log("ngOnChanges called");
+    console.log(changes);
+  }
 
   ngOnInit() {
-    console.log('ngOnInit called');
-    console.log('Text Content: '+this.header.nativeElement.textContent);
-    console.log('Text Content of Paragraph: '+this.paragraph.nativeElement.textContent);
+    console.log("ngOnInit called");
+    console.log("Text Content: " + this.header.nativeElement.textContent);
+    console.log(
+      "Text Content of Paragraph: " + this.paragraph.nativeElement.textContent
+    );
   }
-  ngDoCheck(){
-    console.log('ngDoCheck called');
+  ngDoCheck() {
+    console.log("ngDoCheck called");
     /*
       It is called whenever angular checks for any changes.
     */
   }
-  ngAfterContentInit(){
-    console.log('ngAfterContentInit called');
-    console.log('Text Content of Paragraph: '+this.paragraph.nativeElement.textContent);
-
+  ngAfterContentInit() {
+    console.log("ngAfterContentInit called");
+    console.log(
+      "Text Content of Paragraph: " + this.paragraph.nativeElement.textContent
+    );
   }
-  ngAfterContentChecked(){
-    console.log('ngAfterContentChecked called')
+  ngAfterContentChecked() {
+    console.log("ngAfterContentChecked called");
   }
-  ngAfterViewInit(){
-    console.log('ngAfterViewInit called');
-    console.log('Text Content: '+this.header.nativeElement.textContent);
+  ngAfterViewInit() {
+    console.log("ngAfterViewInit called");
+    console.log("Text Content: " + this.header.nativeElement.textContent);
   }
-  ngAfterViewChecked(){
-    console.log('ngAfterViewChecked called');
+  ngAfterViewChecked() {
+    console.log("ngAfterViewChecked called");
   }
-  ngOnDestroy(){
-    console.log('ngOnDestroy called');
+  ngOnDestroy() {
+    console.log("ngOnDestroy called");
   }
 }
