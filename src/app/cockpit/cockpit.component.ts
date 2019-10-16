@@ -1,4 +1,11 @@
-import { Component, OnInit, EventEmitter, Output } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  EventEmitter,
+  Output,
+  ViewChild,
+  ElementRef
+} from "@angular/core";
 
 @Component({
   selector: "app-cockpit",
@@ -10,32 +17,36 @@ export class CockpitComponent implements OnInit {
     serverName: string;
     serverContent: string;
   }>();
-  @Output('bpCreated') blueprintCreated = new EventEmitter<{
+  @Output("bpCreated") blueprintCreated = new EventEmitter<{
     serverName: string;
     serverContent: string;
   }>();
   //newServerName = "";
   //We don't need the newServerName because we are using the local reference approach.
-  newServerContent = "";
+  //newServerContent = "";
+  @ViewChild("serverContentInput", { static: true })
+  serverContentInput: ElementRef;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {
-
-  }
-  onAddServer(serverNameInput : HTMLInputElement) {
-   // console.log(serverNameInput.value);
-   // by logging this we can analyze this,what it actually means
+  ngOnInit() { }
+  onAddServer(serverNameInput: HTMLInputElement) {
+    // console.log(serverNameInput.value);
+    console.log(this.serverContentInput);
+    // by logging this we can analyze this,what it actually means
     this.serverCreated.emit({
       serverName: serverNameInput.value,
-      serverContent: this.newServerContent
+      //  serverContent: this.newServerContent
+      serverContent: this.serverContentInput.nativeElement.value
     });
   }
 
-  onAddBlueprint(serverNameInput : HTMLInputElement) {
+  onAddBlueprint(serverNameInput: HTMLInputElement) {
     this.blueprintCreated .emit({
-      serverName: serverNameInput.value,
-      serverContent: this.newServerContent
+    serverName: serverNameInput.value,
+    //serverContent: this.newServerContent
+    serverContent: this.serverContentInput.nativeElement.value
+
     });
   }
 }

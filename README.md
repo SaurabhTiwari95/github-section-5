@@ -77,3 +77,13 @@
 
     And we can see that in the console by inspecting the code.
 ```
+### Getting access to template & DOM with @ViewChild(Lec-74)
+  @ViewChild('serverContentInput',{static:true}) serverContentInput: ElementRef;
+  ***
+    - ViewChild is a decorator which will be used.
+    - We need to import it from @angular/core.
+    - Then we need to pass an argument in the selector(Refer-Lec 73).
+    - We can pass the local reference here as a string in the argument.
+    - If we don't want to pass the string but want to select the component,
+      we could pass the component type there. 
+   ***

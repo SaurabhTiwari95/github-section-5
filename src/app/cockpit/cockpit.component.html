@@ -25,8 +25,16 @@
 
 		<label>Server Content</label>
 
-		<input type="text" class="form-control" [(ngModel)]="newServerContent">
-		<br>
+		<!-- <input type="text" class="form-control" [(ngModel)]="newServerContent"> -->
+    <!--
+      Another way of getting access to local reference or to any element actually,directly from within our typeScript
+      code.
+    -->
+		<input 
+      type="text" 
+      class="form-control" 
+      #serverContentInput>
+    <br>
 		<button
         class="btn btn-primary"
         (click)="onAddServer(serverNameInput)">Add Server</button>
