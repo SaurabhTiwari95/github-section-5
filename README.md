@@ -95,16 +95,15 @@
   - When we have a complex HTML code like the above which we want to pass into a component from outside.
   - The above tag is pasted in the app.component.html file to use the <ng-content></ng-content> directive.
   - Everything which is placed between opening and cosing of our own component is lost by default, it is 
-    simply removed from the DOM and angular will not take care about it but we can change this by the special
-    directive call [ng-content].
+      simply removed from the DOM and angular will not take care about it but we can change this by the special
+      directive call [ng-content].
   - ng-content looks like a component but it doesn't have it's own template.
   - we can add this directive in the template in the place where we want to render the content.
   - It serves as a hook we can place in our component to mark the place for angular,where it should 
-    add any content it finds between opening and closing tag of the component(int this case it is <app-server-element></app-server-element> located in the
-    app.component.html file).
+      add any content it finds between opening and closing tag of the component(in this case it is ]  [<app-server-element></app-server-element>] located in the app.component.html file).
   - Now the app will look exactly the way it looked before but now technically something totally different happened
-    here.
+      here.
   - Now we add this via the ng-content hook and we have added between opening and closing tags therefore
-    it will be projected into our component(i.e. app-server-element component).
+      it will be projected into our component(i.e. app-server-element component).
     
 ***
