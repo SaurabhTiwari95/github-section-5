@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  serverElements = [{type: 'Server', name: 'TestServer', content: 'A Test Server Component !!'}];
+  serverElements = [{type: 'Server', name: 'TestServer', content: 'Test Content!!'}];
   onServerAdded(serverData :{serverName: string, serverContent: string}) {
      this.serverElements.push({
      type: 'server',
@@ -21,5 +21,8 @@ export class AppComponent {
      name: blueprintData.serverName,
      content: blueprintData.serverContent
      });
+  }
+  OnChangeFirst(){
+    this.serverElements[0].name='Changed!';
   }
 }

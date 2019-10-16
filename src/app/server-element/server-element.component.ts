@@ -1,4 +1,14 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { 
+    Component, 
+    OnInit, 
+    Input, 
+    ViewEncapsulation, 
+    OnChanges, 
+    SimpleChanges,
+    DoCheck,
+    AfterContentInit
+  
+  } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -23,7 +33,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   */
 })
 
-export class ServerElementComponent implements OnInit {
+export class ServerElementComponent implements OnInit,OnChanges,DoCheck,AfterContentInit {
   /* By default All properties of components are accessible only inside these components and not from outside
   that is why we have to add a decorator to the property(Input),we have to explicit about which property 
   is bindable to other components.
@@ -33,9 +43,32 @@ export class ServerElementComponent implements OnInit {
   parent component or any component hosting our ServerElementComponent(like we
   have done in app.component.html file) is now able to bind to the element*/
  @Input('srvElement') element:{type: string, name: string, content: string};
-  constructor() { }
+ @Input() name: string; 
+  constructor() {
+    console.log('constructor called');
+   }
+   ngOnChanges(changes: SimpleChanges){
+     /*
+      This hook receives an argumnet & it's the only hook which does.
+     */
+     console.log('ngOnChanges called');
+     console.log(changes);
+
+
+   }
 
   ngOnInit() {
+    console.log('ngOnInit called');
+  }
+  ngDoCheck(){
+    console.log('ngDoCheck called');
+    /*
+      It is called whenever angular checks for any changes.
+    */
+  }
+  ngAfterContentInit(){
+    console.log('ngAfterContentInit called');
+
   }
 
 }
