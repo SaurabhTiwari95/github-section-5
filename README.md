@@ -119,3 +119,12 @@
   - **ngAfteViewInit** : *Called after the component's view(and child views) has been initialized.*
   - **ngAfterViewChecked** : *Called every time the view(and child views) have been checked.*
   - **ngOnDestroy** : *Called once the component is about to be destroyed.*
+#### Overview
+  ***
+    - how to use databinding with custom property & events
+    - how to pass data around
+    - how to access elements in DOM
+    - how to use local reference
+    - how to really create a dynamic app
+    - how to use lifecycle hooks to run some code at specific point o time
+  ***
